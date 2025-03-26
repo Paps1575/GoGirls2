@@ -10,14 +10,15 @@ import retrofit2.http.Path
 interface GoGirlsApi {
 
     @GET("Conductoras")
-    suspend fun getCondutoras():Response<ConductoraModel>
+    suspend fun getCondutoras(): Response<List<ConductoraModel>>
 
     @GET("Pasajeras")
-    suspend fun getPasajeras():Response<PasajeraModel>
+    suspend fun getPasajeras(): Response<List<PasajeraModel>>
 
     @GET("Viajes")
-    suspend fun getViajes():Response<ViajeModel>
+    suspend fun getViajes(): Response<List<ViajeModel>>
 
     @GET("Viajes/{id}")
     suspend fun getViajeById(@Path("id") id: Int): ViajeModel
 }
+
